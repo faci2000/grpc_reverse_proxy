@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "services.exponentiation";
+option java_multiple_files = true;
+option java_outer_classname = "ExponentiationProto";
+
+package Exponentiation;
+
+message ExponentiationRequest {
+    int32 number = 1;
+}
+
+message ExponentiationResponse {
+    int64 next = 1;
+}
+
+service Exponentiation{
+    rpc exponentiate(ExponentiationRequest) returns(ExponentiationResponse) {}
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "services.primality";
+option java_multiple_files = true;
+option java_outer_classname = "PrimalityProto";
+
+package Primality;
+
+message IsPrimeRequest {
+    int32 number = 1;
+}
+
+message IsPrimeResponse {
+    bool isPrime = 1;
+}
+
+service Primality {
+    rpc checkIfNumberIsPrime(IsPrimeRequest) returns(IsPrimeResponse) {}
+}

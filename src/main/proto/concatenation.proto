@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "services.concatenation";
+option java_multiple_files = true;
+option java_outer_classname = "ConcatenationProto";
+
+package Concatenation;
+
+message ConcatenationRequest {
+    string textA = 1;
+    string textB = 2;
+}
+
+message ConcatenationResponse {
+    string concatenatedText = 1;
+}
+
+service Concatenation{
+    rpc concatenate(ConcatenationRequest) returns(ConcatenationResponse) {}
+}
